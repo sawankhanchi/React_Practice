@@ -5,11 +5,17 @@ import React, { useState } from 'react';
 const App = () => {
   const [name, setName] = useState("");
   
-  const [lastName, setFullName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   const [fullName, setFullName] = useState("");
 
-  const [lastNamenew, setLastNamenew] = useState("");
+  const [lastNamenew, setLastNameNew] = useState("");
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    setFullName(name);
+    setLastNameNew(lastName);
+  }; 
 
   const inputEvent = (event) => {
     console.log(event.target.value);
@@ -18,12 +24,6 @@ const App = () => {
 
   const inputEventTwo = (event) => {
     setLastName(event.target.value);
-  };
-
-  const onSubmit = (event) => {
-      event.preventDefault();
-      setFullName(name);
-      setLastNamenew(lastName);
   };
 
   return (
